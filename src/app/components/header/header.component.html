@@ -1,0 +1,19 @@
+<nav>
+    <div class="logo">
+        <div class="header__brandname">Helga Hübner</div>
+        <div class="header__subtitle">Fotografie mit Liebe</div>
+    </div>
+
+    <div class="hamburger" (onClick)=hamburgerClick()>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <ul class="header-links" [ngClass]="{'open': isHamburger}">
+        <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Home</a></li>
+        <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Portfolio</a></li>
+        <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Über mich</a></li>
+        <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Kontakt</a></li>
+    </ul>
+</nav>
