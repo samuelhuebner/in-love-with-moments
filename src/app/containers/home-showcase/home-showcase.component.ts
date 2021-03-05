@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import SwiperCore, { Autoplay, EffectFade, Pagination, Scrollbar } from 'swiper/core';
+
+SwiperCore.use([Pagination, EffectFade, Autoplay, Scrollbar]);
 
 @Component({
   selector: 'app-home-showcase',
@@ -8,53 +11,22 @@ import { Component, OnInit } from '@angular/core';
 export class HomeShowcaseComponent implements OnInit {
   numberOfSlides: number;
   currentSlideIndex: number;
+  imagePaths: string[];
 
-  constructor() { }
+
+  constructor() {
+    this.imagePaths = [
+      '../../../assets/images/DSC05068-min.JPG',
+      '../../../assets/images/DSC_3126-min.JPEG',
+      '../../../assets/images/DSC03029-min.JPG',
+      '../../../assets/images/DSC04705-min.JPG',
+      '../../../assets/images/DSC05577-min.JPG',
+      '../../../assets/images/DSC_1608-min.JPG',
+      '../../../assets/images/DSC_3847-min.JPG',
+      '../../../assets/images/DSC_7793-min.JPG'
+    ];
+  }
 
   ngOnInit(): void {
-    // TODO: This has to be set dynamically when loading the images from the web
-    this.numberOfSlides = 8;
-
-    this.currentSlideIndex = this.getRandomInt(this.numberOfSlides + 1);
-    this.showSlide(this.currentSlideIndex);
-  }
-
-  /**
-   * Sets the visibility of the slide
-   * @param slideIdex Index of the slide to show
-   */
-  showSlide(slideIdex: number): void {
-    const slides = Array.from(document.getElementsByClassName('showcase__slide') as HTMLCollectionOf<HTMLElement>);
-
-    if (!(slides instanceof Array)) {
-      return;
-    }
-
-    if (slideIdex > slides.length) {
-      this.currentSlideIndex = 0;
-    } else if (slideIdex < 0) {
-      this.currentSlideIndex = this.numberOfSlides - 1;
-    } else {
-      this.currentSlideIndex = slideIdex;
-    }
-
-
-    slides.forEach((item, index) => {
-      if (index !== this.currentSlideIndex) {
-        item.style.display = 'none';
-        return;
-      }
-
-      item.style.display = 'block';
-    });
-
-  }
-
-  /**
-   * Returns a random number that lays between 0 and the given range
-   * @param range e.g: 10 --> returns number between 0 and 9
-   */
-  getRandomInt(range: number): number {
-    return Math.floor(Math.random() * Math.floor(range));
   }
 }

@@ -1,7 +1,6 @@
-@import 'swiper/swiper-bundle';
+@import '~swiper/swiper-bundle';
 
 /* You can add global styles to this file, and also import other style files */
-
 * {
     margin: 0;
     padding: 0;
@@ -16,4 +15,8 @@ html, body {
 
 body::-webkit-scrollbar {
     display: none;
+}
+
+:root {
+    --swiper-theme-color: white;
 }

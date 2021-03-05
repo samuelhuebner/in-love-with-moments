@@ -3,10 +3,6 @@
     height: 100vh;
 }
 
-.showcase__slide {
-    display: none;
-}
-
 .showcase__image {
     img {
         min-width: 100vw;
@@ -18,8 +14,6 @@
     }
 }
 
-.swiper-scrollbar {
-    // transform: translateY(-10px);
-    z-index: 20;
-    background-color: rgba($color: white, $alpha: 0.3);
+.swiper-pagination-bullet-active {
+    background: white !important;
 }
