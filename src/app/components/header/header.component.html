@@ -15,5 +15,7 @@
         <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Portfolio</a></li>
         <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Über mich</a></li>
         <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Kontakt</a></li>
+        <!-- This last item is to prevent the user not seeing the last link on mobile -->
+        <li class="header__item"></li>
     </ul>
 </nav>
