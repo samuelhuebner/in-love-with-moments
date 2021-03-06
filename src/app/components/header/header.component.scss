@@ -20,6 +20,8 @@ nav {
     z-index: 1000;
     position: fixed;
     top: 0;
+
+    animation: nav-load 800ms ease-out;
 }
 
 .logo {
@@ -74,7 +76,7 @@ nav {
         flex-direction: column;
         clip-path: circle(100px at 90% -30%);
         -webkit-clip-path: circle(100px at 90% -30%);
-        transition: all 0.7s ease-out;
+        transition: all 0.5s ease-out;
         pointer-events: none;
     }
 
@@ -85,7 +87,7 @@ nav {
     }
 
     .header__item {
-        transition: all 1s ease-out;
+        transition: all 0.7s ease-out;
         opacity: 0;
     }
 
@@ -111,5 +113,17 @@ nav {
 
     .header__item.fade {
         opacity: 1;
+    }
+}
+
+@keyframes nav-load {
+    0% {
+        opacity: 0%;
+        transform: translateY(-100px)
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
     }
 }

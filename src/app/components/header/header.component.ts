@@ -1,18 +1,21 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, AfterViewInit{
+export class HeaderComponent implements OnInit, AfterViewInit {
   public isHamburger = false;
 
   private hamburger: any;
   private headerLinks: any;
   private links: any;
 
-  constructor(private elemetRef: ElementRef) { }
+  constructor(
+    private elemetRef: ElementRef,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -27,5 +30,9 @@ export class HeaderComponent implements OnInit, AfterViewInit{
 
   public hamburgerClick(): void {
     this.isHamburger = !this.isHamburger;
+  }
+
+  public onMenuClick(): void {
+    this.isHamburger = false;
   }
 }

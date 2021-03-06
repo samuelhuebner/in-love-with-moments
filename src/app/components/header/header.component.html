@@ -11,10 +11,18 @@
     </div>
 
     <ul class="header-links" [ngClass]="{'open': isHamburger}">
-        <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Home</a></li>
-        <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Portfolio</a></li>
-        <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Über mich</a></li>
-        <li class="header__item" [ngClass]="{'fade': isHamburger}"><a class="header__link" href="#">Kontakt</a></li>
+        <li class="header__item" [ngClass]="{'fade': isHamburger}">
+            <a class="header__link" routerLink="home" (click)="onMenuClick()">Home</a>
+        </li>
+        <li class="header__item" [ngClass]="{'fade': isHamburger}">
+            <a class="header__link" routerLink="portfolio" (click)="onMenuClick()">Portfolio</a>
+        </li>
+        <li class="header__item" [ngClass]="{'fade': isHamburger}">
+            <a class="header__link" routerLink="about-me" (click)="onMenuClick()">Über mich</a>
+        </li>
+        <li class="header__item" [ngClass]="{'fade': isHamburger}">
+            <a class="header__link" routerLink="contact" (click)="onMenuClick()">Kontakt</a>
+        </li>
         <!-- This last item is to prevent the user not seeing the last link on mobile -->
         <li class="header__item"></li>
     </ul>
