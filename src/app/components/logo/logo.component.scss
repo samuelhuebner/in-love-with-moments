@@ -1,0 +1,19 @@
+.logo {
+    position: relative;
+    margin-left: 20px;
+    margin-top: 50px;
+    transform: translate(0%, -25px);
+}
+
+.header__brandname {
+    font-size: x-large;
+    color: black;
+}
+
+.header__subtitle {
+    font-size: large;
+    color: black;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Dancing Script', cursive;
+}

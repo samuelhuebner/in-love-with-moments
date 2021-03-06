@@ -10,6 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomeShowcaseComponent } from './containers/home-showcase/home-showcase.component';
 import { AboutMeComponent } from './containers/about-me/about-me.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AboutMeComponent } from './containers/about-me/about-me.component';
     HeaderComponent,
     HomeComponent,
     HomeShowcaseComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    FooterComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

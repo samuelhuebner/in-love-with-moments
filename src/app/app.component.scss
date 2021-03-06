@@ -1,0 +1,14 @@
+.content {
+    min-height: 100vh;
+    position: relative;
+}
+
+.content-wrap {
+    padding-bottom: 20rem;
+}
+
+@media screen and(max-width: 800px) {
+    .content-wrap {
+        padding-bottom: 30rem;
+    }
+}
