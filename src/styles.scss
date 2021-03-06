@@ -19,4 +19,40 @@ body::-webkit-scrollbar {
 
 :root {
     --swiper-theme-color: white;
+    --loadingAnimTime: 800ms;
+}
+
+.container {
+    padding-top: 100px;
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
+    --webkit-animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
+    -moz-animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
+    -o-animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
+}
+
+@keyframes containerLoad {
+    0% {
+        transform: translateY(10vh);
+        opacity: 0%;
+        visibility: unset;
+    }
+    
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+        visibility: unset;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
 }
