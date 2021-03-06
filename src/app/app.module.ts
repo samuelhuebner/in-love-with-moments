@@ -12,6 +12,7 @@ import { HomeShowcaseComponent } from './containers/home-showcase/home-showcase.
 import { AboutMeComponent } from './containers/about-me/about-me.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { PortfolioSelectorComponent } from './containers/portfolio-selector/portfolio-selector.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LogoComponent } from './components/logo/logo.component';
     HomeShowcaseComponent,
     AboutMeComponent,
     FooterComponent,
-    LogoComponent
+    LogoComponent,
+    PortfolioSelectorComponent
   ],
   imports: [
     BrowserModule,

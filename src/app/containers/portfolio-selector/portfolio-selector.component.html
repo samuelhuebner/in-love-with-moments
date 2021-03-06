@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="portfolio-selector__container">
+        <div *ngFor="let section of portfolioSections" class="portfolio-selector__column" data-aos="fade-up">
+            <div class="portfolio-selector__section-name">
+                <h4>{{ section.name }}</h4>
+            </div>
+            <div class="portfolio-selector__image">
+                <img [src]="section.imagePath" loading="lazy">
+            </div>
+            <div class="portfolio-selector__section-link">
+                <a [routerLink]="section.routerLink">Zeig mir mehr!</a>
+            </div>
+            <div class="portfolio-selector__hover-content">
+
+            </div>
+        </div>
+    </div>
+</div>
