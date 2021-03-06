@@ -21,7 +21,7 @@ nav {
     position: fixed;
     top: 0;
 
-    animation: nav-load 800ms ease-out;
+    // animation: nav-load 800ms ease-out;
 }
 
 .logo {
@@ -112,14 +112,14 @@ nav {
     }
 }
 
-@keyframes nav-load {
-    0% {
-        opacity: 0%;
-        transform: translateY(-100px)
-    }
+// @keyframes nav-load {
+//     0% {
+//         opacity: 0%;
+//         transform: translateY(-100px)
+//     }
 
-    100% {
-        opacity: 100%;
-        transform: translateY(0);
-    }
-}
+//     100% {
+//         opacity: 100%;
+//         transform: translateY(0);
+//     }
+// }

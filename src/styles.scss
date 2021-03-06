@@ -1,4 +1,5 @@
 @import '~swiper/swiper-bundle';
+@import '~aos/dist/aos.css';
 
 /* You can add global styles to this file, and also import other style files */
 * {
@@ -30,10 +31,10 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
 
-    animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
-    --webkit-animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
-    -moz-animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
-    -o-animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
+    // animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
+    // --webkit-animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
+    // -moz-animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
+    // -o-animation: containerLoad var(--loadingAnimTime) ease-out 1 normal;
 }
 
 .row {
@@ -77,19 +78,19 @@ body::-webkit-scrollbar {
     background-color: rgb(99, 99, 99);
 }
 
-@keyframes containerLoad {
-    0% {
-        transform: translateY(10vh);
-        opacity: 0%;
-        visibility: unset;
-    }
+// @keyframes containerLoad {
+//     0% {
+//         transform: translateY(10vh);
+//         opacity: 0%;
+//         visibility: unset;
+//     }
     
-    100% {
-        transform: translateY(0);
-        opacity: 100%;
-        visibility: unset;
-    }
-}
+//     100% {
+//         transform: translateY(0);
+//         opacity: 100%;
+//         visibility: unset;
+//     }
+// }
 
 h4 {
     font-weight: bold;

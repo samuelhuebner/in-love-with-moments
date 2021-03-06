@@ -1,9 +1,9 @@
-<div class="showcase__container">
+<div class="showcase__container" data-aos="fade-in">
     <swiper [loop]="true" [slidesPerView]="1" [pagination]="{ clickable: true, dynamicBullets: true }"
         [autoplay]="{ delay: 3000 }" [effect]="'fade'" [speed]="1250">
         <ng-template swiperSlide *ngFor="let path of imagePaths">
             <div class="showcase__image">
-                <img [src]="path">
+                <img [src]="path" loading="lazy">
             </div>
         </ng-template>
     </swiper>
