@@ -102,6 +102,15 @@ h4 {
     visibility: hidden;
 }
 
+.heading {
+    font-size: x-large;
+}
+
+.sub-heading {
+    margin: 20px 10px;
+    font-size: large;
+    text-align: center;
+}
 
 @media screen and(max-width: 800px) {
     .show-only-mobile {

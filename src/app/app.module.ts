@@ -13,6 +13,7 @@ import { AboutMeComponent } from './containers/about-me/about-me.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { PortfolioSelectorComponent } from './containers/portfolio-selector/portfolio-selector.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PortfolioSelectorComponent } from './containers/portfolio-selector/port
     AboutMeComponent,
     FooterComponent,
     LogoComponent,
-    PortfolioSelectorComponent
+    PortfolioSelectorComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
