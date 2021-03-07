@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SwiperModule } from 'swiper/angular';
-import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { PortfolioSelectorComponent } from './containers/portfolio-selector/portfolio-selector.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { WeddingPortfolioComponent } from './components/wedding-portfolio/wedding-portfolio.component';
+import { PortfolioShowcaseComponent } from './containers/portfolio-showcase/portfolio-showcase.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +26,14 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     FooterComponent,
     LogoComponent,
     PortfolioSelectorComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    WeddingPortfolioComponent,
+    PortfolioShowcaseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SwiperModule,
-    LoadingBarRouterModule
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
