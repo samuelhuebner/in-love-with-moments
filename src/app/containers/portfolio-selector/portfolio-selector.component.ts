@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioSection } from 'src/app/models';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-portfolio-selector',
@@ -8,17 +9,13 @@ import { PortfolioSection } from 'src/app/models';
 })
 export class PortfolioSelectorComponent implements OnInit {
   portfolioSections: PortfolioSection[];
+  portfolioService: PortfolioService;
 
-  constructor() {
-    // TODO: Move this to the backend
-    this.portfolioSections = [
-      { name: 'Wedding', routerLink: '/portfolio/wedding', imagePath: '../../../assets/images/portfolio-selector/wedding.JPG' },
-      { name: 'Family', routerLink: '/portfolio/family', imagePath: '../../../assets/images/portfolio-selector/family.JPG' },
-      { name: 'Couples', routerLink: '/portfolio/couples', imagePath: '../../../assets/images/portfolio-selector/couples.JPG' },
-      { name: 'Portraits', routerLink: '/portfolio/portraits', imagePath: '../../../assets/images/portfolio-selector/portrait.JPG' }
-    ];
+  constructor(portfolioService: PortfolioService) {
+    this.portfolioService = portfolioService;
   }
 
   ngOnInit(): void {
+    this.portfolioSections = this.portfolioService.getPortfolioSections();
   }
 }

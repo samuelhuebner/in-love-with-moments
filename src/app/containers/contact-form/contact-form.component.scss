@@ -1,0 +1,41 @@
+mat-card {
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-radio-button {
+    font-family: 'Quicksand', sans-serif;
+    margin: 1.5px 0;
+}
+
+mat-checkbox {
+    font-family: 'Quicksand', sans-serif;
+    margin-right: 20px;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+.contact-form__privacy {
+    display: flex;
+    width: 100%;
+}
+
+.contact-form__sub-heading {
+    font-size: larger;
+    margin: 10px 0;
+}
+
+.contact-form__row {
+    display: flex;
+    flex-direction: column !important;
+}
+
+#contact-form__message {
+    margin-top: 20px;
+}

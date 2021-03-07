@@ -1,0 +1,36 @@
+.contact__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    max-width: 100vw;
+}
+
+.contact__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 50vw;
+}
+
+@media screen and(max-width: 1000px) {
+    .contact__section {
+        max-width: 70vw;
+    }
+}
+
+@media screen and(max-width: 800px) {
+    .contact__section {
+        max-width: 80vw;
+    }
+}
+
+@media screen and(max-width: 600px) {
+    .contact__section {
+        max-width: 90vw;
+    }
+}

@@ -1,0 +1,88 @@
+<div class="contact-form__container">
+    <form>
+        <!-- TODO: Implement form submission -->
+        <mat-card>
+            <mat-card-content>
+                <!-- Name input -->
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Dein Name</mat-label>
+                        <input type="text" matInput placeholder="Dein Name">
+                    </mat-form-field>
+                </div>
+                <!-- Email input -->
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Deine Email Adresse</mat-label>
+                        <input matInput placeholder="beispiel@email.com" type="email">
+                    </mat-form-field>
+                </div>
+                <!-- Phone input -->
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Deine Telefonnummer (optional)</mat-label>
+                        <input matInput type="tel">
+                    </mat-form-field>
+                </div>
+
+                <!-- Category input -->
+                <div class="row contact-form__row">
+                    <div class="contact-form__sub-heading">Für was interessierst du dich?</div>
+                    <mat-radio-group class="contact-form__row">
+                        <mat-radio-button *ngFor="let section of portfolioSections" [value]="section.name"
+                            (change)="portfolioChange(section)">
+                            {{ section.name }}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <!-- If wedding show additional field-->
+                <div class="row">
+                    <mat-form-field appearance="outline" *ngIf="(selectedPortfolio==='Wedding')">
+                        <mat-label>Datum & Ort der Hochzeit:</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+
+                <!-- Text input -->
+                <div class="row" id="contact-form__message">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Hier ist Platz für deine Nachricht:</mat-label>
+                        <textarea matInput></textarea>
+                    </mat-form-field>
+                </div>
+
+                <!-- Category input -->
+                <div class="row contact-form__row">
+                    <div class="contact-form__sub-heading">Wie bist du auf mich aufmerksam geworden?</div>
+                    <mat-radio-group class="contact-form__row">
+                        <mat-radio-button *ngFor="let source of sources" [value]="source">
+                            {{ source }}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <div class="row contact-form__row">
+                    <div class="contact-form__sub-heading">Datenschutz</div>
+                    <div class="contact-form__privacy row">
+                        <mat-checkbox></mat-checkbox>
+                        Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage
+                        erhoben
+                        und
+                        verarbeitet werden.
+                        Die Daten werden nach abgeschlossener Bearbeitung Deiner Anfrage gelöscht. Hinweis:
+                        Du kannst Deine Einwilligung jederzeit für die Zukunft per E-Mail an
+                        info@inlovewithmoments.de
+                        widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten findest Du in meiner
+                        Datenschutzerklärung.
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <div class="row">
+                    <button class="button" mat-button>Abschicken</button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>
