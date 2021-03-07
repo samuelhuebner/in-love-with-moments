@@ -10,6 +10,7 @@ export class WeddingPortfolioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
 
 }

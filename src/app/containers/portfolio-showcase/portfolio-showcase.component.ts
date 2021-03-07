@@ -18,6 +18,7 @@ export class PortfolioShowcaseComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // TODO: Move this to the parent component
     this.images = [
       '../../../assets/images/portfolio-selector/wedding.JPG',
       '../../../assets/images/portfolio-selector/family.JPG',
