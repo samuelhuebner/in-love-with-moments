@@ -17,6 +17,7 @@ import { WeddingPortfolioComponent } from './components/wedding-portfolio/weddin
 import { PortfolioShowcaseComponent } from './containers/portfolio-showcase/portfolio-showcase.component';
 import { PortraitPortfolioComponent } from './components/portrait-portfolio/portrait-portfolio.component';
 import { FamilyPortfolioComponent } from './components/family-portfolio/family-portfolio.component';
+import { CouplesPortfolioComponent } from './components/couples-portfolio/couples-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FamilyPortfolioComponent } from './components/family-portfolio/family-p
     WeddingPortfolioComponent,
     PortfolioShowcaseComponent,
     PortraitPortfolioComponent,
-    FamilyPortfolioComponent
+    FamilyPortfolioComponent,
+    CouplesPortfolioComponent
   ],
   imports: [
     BrowserModule,
