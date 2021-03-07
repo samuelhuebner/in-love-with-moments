@@ -15,6 +15,7 @@ import { PortfolioSelectorComponent } from './containers/portfolio-selector/port
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { WeddingPortfolioComponent } from './components/wedding-portfolio/wedding-portfolio.component';
 import { PortfolioShowcaseComponent } from './containers/portfolio-showcase/portfolio-showcase.component';
+import { PortraitPortfolioComponent } from './components/portrait-portfolio/portrait-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PortfolioShowcaseComponent } from './containers/portfolio-showcase/port
     PortfolioSelectorComponent,
     PortfolioComponent,
     WeddingPortfolioComponent,
-    PortfolioShowcaseComponent
+    PortfolioShowcaseComponent,
+    PortraitPortfolioComponent
   ],
   imports: [
     BrowserModule,
