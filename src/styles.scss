@@ -60,7 +60,8 @@ body::-webkit-scrollbar {
 
 .container {
     padding-top: 100px;
-    width: 100%;
+    max-width: 100%;
+
     min-height: 90vh;
     display: flex;
     align-items: center;

@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -12,6 +16,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 
+
+import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './containers/header/header.component';
@@ -29,6 +35,7 @@ import { FamilyPortfolioComponent } from './components/family-portfolio/family-p
 import { CouplesPortfolioComponent } from './components/couples-portfolio/couples-portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ContactFormComponent } from './containers/contact-form/contact-form.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +54,8 @@ import { ContactFormComponent } from './containers/contact-form/contact-form.com
     FamilyPortfolioComponent,
     CouplesPortfolioComponent,
     ContactComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +68,9 @@ import { ContactFormComponent } from './containers/contact-form/contact-form.com
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

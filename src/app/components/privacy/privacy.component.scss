@@ -1,0 +1,50 @@
+.privacy-container {
+    flex-direction: column;
+    width: 60vw;
+    margin-top: 5rem;
+}
+
+.privacy-section {
+    margin: 1rem 0;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.list-item {
+    margin-left: 1rem;
+    margin-top: 2px;
+}
+
+.privacy-heading {
+    font-weight: 900;
+}
+
+.privacy-adress {
+    display: flex;
+    flex-direction: column;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+li {
+    margin-left: 1rem;
+    margin-top: 6px;
+}
+
+.padding-left {
+    padding-top: 2px;
+    padding-left: 1rem;
+}
+
+a {
+    overflow: break-word;
+}
+
+@media screen and(max-width: 800px) {
+    .privacy-container {
+        width: 90vw;
+    }
+}
