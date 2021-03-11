@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "in-love-with-moments"
+  },
+  "targets": {
+    "in-love-with-moments": {
+      "hosting": {
+        "inlovewithmoments": [
+          "in-love-with-moments"
+        ]
+      }
+    }
   }
 }

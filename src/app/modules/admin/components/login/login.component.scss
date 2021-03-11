@@ -1,0 +1,43 @@
+.login-container {
+  form {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 30vw;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.login-button-row {
+  margin-bottom: 2rem;
+}
+
+.login-row {
+  flex-direction: column;
+}
+
+@media screen and(max-width: 1500px) {
+  .login-container {
+    form {
+      width: 50vw;
+    }
+  }
+}
+
+@media screen and(max-width: 850px) {
+  .login-container {
+    form {
+      width: 80vw;
+    }
+  }
+}
+
+@media screen and(max-width: 600px) {
+  .login-container {
+    form {
+      width: 90vw;
+    }
+  }
+}

@@ -44,7 +44,7 @@ $inlovewithmoments-theme: mat-light-theme((
 }
 
 html, body {
-    font-family: 'Quicksand', sans-serif;   
+    font-family: 'Quicksand', sans-serif;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -109,6 +109,12 @@ body::-webkit-scrollbar {
     background-color: rgb(181, 181, 181);
 }
 
+.button-disabled:hover,
+.button-disabled:focus {
+  color: black;
+  background-color: rgb(181, 181, 181);
+}
+
 .button:hover {
     color: white;
     background-color: rgb(99, 99, 99);
@@ -120,7 +126,7 @@ body::-webkit-scrollbar {
 //         opacity: 0%;
 //         visibility: unset;
 //     }
-    
+
 //     100% {
 //         transform: translateY(0);
 //         opacity: 100%;

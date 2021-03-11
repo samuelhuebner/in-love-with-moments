@@ -1,7 +1,10 @@
-<app-header></app-header>
-<div class="content">
+<app-header *ngIf="!hasRoute('admin')"></app-header>
+<div class="content" *ngIf="!hasRoute('admin')">
     <div class="content-wrap">
         <router-outlet></router-outlet>
     </div>
     <app-footer></app-footer>
 </div>
+
+<!--This output only gets shown when the admin route is active-->
+<router-outlet *ngIf="hasRoute('admin')"></router-outlet>

@@ -1,0 +1,46 @@
+<div class="login-container">
+  <div class="row">
+    <h1>Admin login</h1>
+  </div>
+  <div class="row">
+    <form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+      <mat-card>
+        <mat-card-title>
+          <div class="row">Login</div>
+        </mat-card-title>
+        <mat-card-content>
+          <div class="row">
+            <mat-form-field class="login-form-field" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input matInput type="email" name="username" ngModel required email #username="ngModel"
+                autocomplete="current-password" placeholder="example@email.com">
+              <mat-hint class="login-input-errors" *ngIf="username.touched">
+                <div *ngIf="username.errors?.email">username has to be an email</div>
+                <div *ngIf="username.errors?.required">username can't be empty</div>
+              </mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+
+              <input matInput type="password" name="password" ngModel required autocomplete="current-password"
+                #password="ngModel" placeholder="example@email.com">
+              <mat-hint class="login-input-errors" *ngIf="password.touched">
+                <div *ngIf="password.errors?.required">password can't be empty</div>
+              </mat-hint>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <!-- Submit button-->
+        <mat-card-actions>
+          <div class="row login-button-row">
+            <button class="submit button" [ngClass]="{'button-disabled': loginForm.invalid}" mat-raised-button
+              type="submit" [disabled]="loginForm.invalid">Login</button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>
