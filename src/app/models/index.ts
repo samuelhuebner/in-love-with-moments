@@ -9,3 +9,11 @@ export interface User {
   password: string;
   isAdmin?: boolean;
 }
+
+export interface Category {
+  id?: string;
+  name: string;
+  translationDE: string;
+  translationEN?: string;
+  hasCoverImage?: boolean;
+}
