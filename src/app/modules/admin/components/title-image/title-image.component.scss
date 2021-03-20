@@ -1,0 +1,51 @@
+.title-image--container {
+    height: 100%;
+    width: 100%;
+}
+.title-image-container {
+    position: relative;
+    max-width: 20vw;
+    width: 20vw;
+
+    img {
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+.title-image--overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(240, 10%, 8%, 0);
+    -webkit-transition: background-color 1s ease-in-out;
+    -moz-transition: background-color 1s ease-in-out;
+    -ms-transition: background-color 1s ease-in-out;
+    -o-transition: background-color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;
+
+    button {
+        opacity: 0;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -ms-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+    }
+}
+
+.title-image--overlay:hover,
+.title-image--overlay:focus {
+    background-color: hsla(240, 10%, 8%, 0.4);
+
+    button {
+        opacity: 1;
+    } 
+}

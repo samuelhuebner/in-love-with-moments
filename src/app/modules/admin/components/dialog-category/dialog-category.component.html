@@ -1,0 +1,30 @@
+<div class="modal-container">
+    <div class="row">
+        <h1 mat-dialog-title>Create new category</h1>
+    </div>
+    <div mat-dialog-content class="row">
+        <form novalidate #categoryForm="ngForm" (ngSubmit)="onSubmit(categoryForm.value, isEdit)">
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Category</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        [placeholder]="placeholderText"
+                        name="categoryName"
+                        [value]="category?.translationDE"
+                        [(ngModel)]="category.translationDE"
+                        required
+                        minlength="3" #categoryName="ngModel">
+                </mat-form-field>
+            </div>
+            <div class="row button-row">
+                <button class="button" mat-button [disabled]="categoryForm.invalid" type="submit"
+                    [mat-dialog-close]>
+                    <span *ngIf="isEdit">Save</span>
+                    <span *ngIf="!isEdit">Create</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

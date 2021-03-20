@@ -1,0 +1,33 @@
+.button-row {
+    max-width: 200px;
+}
+
+.existing-categories--container {
+    margin: 0 1rem;
+    width: 100%;
+}
+
+.existing-category--item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.existing-categories--sub-heading {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.category-buttons {
+    margin-right: 2rem;
+
+    button {
+        margin: 0 0.4rem;
+    }
+}
+
+.button-row {
+    margin-top: 1rem;
+}

@@ -1,0 +1,59 @@
+.admin-sidenav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    background-color: gray;
+    width: 20vw;
+    min-width: 300px;
+    max-width: 20%;
+}
+
+.admin-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-height: 95%;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-sidenav-heading {
+    padding: 1rem 0;
+    border-bottom: 1px solid white;
+}
+
+.admin-sidenav-select {
+    padding: 1rem 1rem;
+    min-height: 2rem;
+    justify-content: start;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.admin-sidenav-select-icon {
+    margin-right: 1rem;
+}
+
+.admin-sidenav-select:hover {
+    color: white;
+    background-color: rgb(52, 52, 52);
+}
+
+
+.admin-sidenav-select-active {
+    color: white;
+    background-color: black;
+}
+
+.logout-button-row {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}

@@ -1,0 +1,40 @@
+<mat-card>
+    <div class="heading">
+        <h2>Portfolio</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+        <div class="existing-categories--sub-heading">
+            <h3>Categories</h3>
+        </div>
+        <mat-accordion>
+            <div *ngFor="let category of categories">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <div class="existing-category--item">
+                            <div class="category-name">
+                                {{ category.translationDE }}
+                            </div>
+                            <div class="category-buttons" (mouseenter)="disabledExpansion = true"
+                                (mouseleave)="disabledExpansion = false">
+                                <button mat-button (click)="openCategoryModal(true, category)">
+                                    <mat-icon>create</mat-icon>
+                                </button>
+                                <button mat-button (click)="deleteCategory(category.id)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </mat-expansion-panel-header>
+                    <div class="category-content">
+                        <app-title-image [category]="category"></app-title-image>
+                    </div>
+                </mat-expansion-panel>
+            </div>
+        </mat-accordion>
+        <div class="button-row">
+            <button mat-button class="button" (click)="openCategoryModal(false)">New category</button>
+        </div>
+    </div>
+
+</mat-card>

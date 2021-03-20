@@ -1,1 +1,22 @@
-test
+<div class="admin-container">
+    <div class="admin-sidenav" data-aos="fade-right">
+        <div class="row admin-sidenav-heading">
+            <h2>Admin settings</h2>
+        </div>
+
+        <a *ngFor="let category of categories" [routerLink]="category.routerLink">
+            <div class="row admin-sidenav-select"
+                [ngClass]="{ 'admin-sidenav-select-active': router.url === category.routerLink }">
+                <mat-icon class="admin-sidenav-select-icon">{{ category.iconName }}</mat-icon>
+                {{ category.name }}
+            </div>
+        </a>
+
+        <div class="row logout-button-row">
+            <button mat-button class="button" (click)="onLogout()">Logout</button>
+        </div>
+    </div>
+    <div class="admin-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
