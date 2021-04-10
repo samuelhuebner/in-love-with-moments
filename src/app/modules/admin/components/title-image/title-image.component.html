@@ -3,14 +3,14 @@
         <h5>Title image</h5>
     </div>
     <div class="upload-container" *ngIf="!category.hasCoverImage">
-        <input type="file" (change)="upload($event, 'cover-image')" accept=".png,.jpg,.jpeg">
+        <input type="file" (change)="uploadCoverImage($event)" accept=".png,.jpg,.jpeg">
         <progress max="100" [value]="(uploadProgress | async)"></progress>
     </div>
     <div class="title-image-row" *ngIf="category.hasCoverImage">
         <div class="title-image-container" *ngIf="coverImageUrl | async; let url">
             <img [src]="url" alt="Cover image" loading="lazy">
             <div class="title-image--overlay">
-                <button mat-raised-button color="warn">
+                <button mat-raised-button color="warn" (click)="deleteCoverImage()">
                     Delete
                     <mat-icon>delete</mat-icon>
                 </button>

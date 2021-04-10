@@ -3,6 +3,7 @@ import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask 
 import { UploadTaskSnapshot } from '@angular/fire/storage/interfaces';
 import { Observable } from 'rxjs';
 import { Category } from 'src/app/models';
+import { ImageService } from 'src/app/services/image.service';
 import { CategoryService } from '../../services/category.service';
 
 @Component({
@@ -17,42 +18,39 @@ export class TitleImageComponent implements OnInit {
 
   @Input() category: Category;
 
-  private coverImageUrl: any;
+  public coverImageUrl: any;
 
   constructor(
     private afStorage: AngularFireStorage,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private imageService: ImageService
   ) { }
 
   ngOnInit(): void {
     this.coverImageUrl = this.afStorage.ref(`images/${this.category.name}/cover`).getDownloadURL();
   }
 
-  public async upload(event, imageType: string) {
-    let uploadPath = `images/${this.category.name}/`;
-    let isCoverImageUpload = false;
-
-    if (imageType === 'cover-image') {
-      uploadPath += 'cover';
-      isCoverImageUpload = true;
-    } else {
-      const randomId = Math.random().toString(36).substring(2);
-      uploadPath += `${this.category.name}-${randomId}`;
-    }
-
-    // create a reference to the storage bucket location
-    this.ref = this.afStorage.ref(uploadPath);
-    // the put method creates an AngularFireUploadTask
-    // and kicks off the upload
-    this.task = this.ref.put(event.target.files[0]);
-
+  /**
+   * Uploads an image to firebase
+   */
+  public async uploadCoverImage(event): Promise<void> {
+    const uploadPath = `images/${this.category.name}/`;
+    this.task = this.imageService.uploadImage(event.target.files[0], uploadPath, 'cover');
     this.uploadProgress = this.task.percentageChanges();
 
     await this.task;
+    this.category.hasCoverImage = true;
+    await this.categoryService.updateCategory(this.category);
+  }
 
-    if (isCoverImageUpload) {
-      this.category.hasCoverImage = true;
-      this.categoryService.updateCategory(this.category);
-    };
+  /**
+   * Deletes the cover image of a category
+   */
+  public async deleteCoverImage(): Promise<void> {
+    const path = `images/${this.category.name}/cover`;
+    await this.imageService.deleteImage(path).toPromise();
+
+    this.category.hasCoverImage = false;
+    await this.categoryService.updateCategory(this.category);
   }
 }

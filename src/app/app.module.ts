@@ -36,6 +36,7 @@ import { CouplesPortfolioComponent } from './components/couples-portfolio/couple
 import { ContactComponent } from './components/contact/contact.component';
 import { ContactFormComponent } from './containers/contact-form/contact-form.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
+import { CommonsModule } from './modules/commons/commons.module';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { PrivacyComponent } from './components/privacy/privacy.component';
     MatSelectModule,
     MatButtonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    CommonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

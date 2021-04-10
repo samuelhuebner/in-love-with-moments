@@ -32,12 +32,13 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { DialogCategoryComponent } from './components/dialog-category/dialog-category.component';
 import { TitleImageComponent } from './components/title-image/title-image.component';
-
-
+import { GalleryImagesComponent } from './components/gallery-images/gallery-images.component';
+import { CommonsModule } from '../commons/commons.module';
 @NgModule({
-  declarations: [AdminComponent, LoginComponent, HomeShowcaseComponent, PortfolioComponent, AboutMeComponent, SettingsComponent, DialogCategoryComponent, TitleImageComponent],
+  declarations: [AdminComponent, LoginComponent, HomeShowcaseComponent, PortfolioComponent, AboutMeComponent, SettingsComponent, DialogCategoryComponent, TitleImageComponent, GalleryImagesComponent],
   imports: [
     CommonModule,
+    CommonsModule,
     AdminRoutingModule,
     MatCardModule,
     MatInputModule,

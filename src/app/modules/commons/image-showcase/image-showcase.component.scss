@@ -1,0 +1,194 @@
+.image-showcase {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-showcase__section {
+    display: inherit;
+    flex-direction: inherit;
+    align-items: inherit;
+    margin-top: 5rem;
+    max-width: 70vw;
+}
+
+.portfolio-showcase__cover-image {
+    max-width: 70%;
+    max-height: 50vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+        min-height: 500px;
+        // transform: translateY(-20%);
+        object-fit: cover;
+    }
+}
+
+.portfolio-showcase__title-box {
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px 10px;
+
+    background-color: white;
+    // position: absolute;
+    transform: translateY(-130px);
+    // border: 0.5px solid rgba($color: #000000, $alpha: 0.1);
+    box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.1);
+}
+
+.portfolio-showcase__title {
+    margin-bottom: 10vh;
+}
+
+.portfolio-showcase__sub-title {
+    margin-bottom: 5vh;
+}
+
+.portfolio-showcase__info-text {
+    text-align: center;
+    font-size: large;
+}
+
+@media screen and(max-width: 1600px) {
+    .portfolio-showcase__section {
+        max-width: 80vw;
+    }
+    .portfolio-showcase__cover-image {
+        max-width: 90%;
+    }
+}
+
+@media screen and(max-width: 1000px) {
+    .portfolio-showcase__title-box {
+        max-width: 80%;
+        transform: translateY(-80px);
+    }
+
+    .portfolio-showcase__section {
+        max-width: 90vw;
+    }
+}
+
+@media screen and(max-width: 600px) {
+    .portfolio-showcase__title-box {
+        max-width: 90%;
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    .portfolio-showcase__images {
+        img {
+            max-width: 90vw;
+        }
+    }
+    .portfolio-showcase__section {
+        max-width: 100vw;
+    }
+}
+
+
+.portfolio-showcase__image-list {
+  display: flex;
+  flex-wrap: wrap;
+//   max-width: 90vw;
+}
+
+.portfolio-showcase__image-wrapper {
+  position: relative;
+  height: 40vh;
+  flex-grow: 1;
+  list-style: none;
+}
+
+.portfolio-showcase__image-wrapper:last-child {
+  // There's no science in using "10" here. In all my testing, this delivered the best results.
+  flex-grow: 10;
+}
+
+.portfolio-showcase__image {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  // margin: 10px;
+}
+
+// ADVANCED
+
+// Portrait
+
+@media (max-aspect-ratio: 1/1) {
+  .portfolio-showcase__image-wrapper {
+    height: 30vh;
+  }
+}
+
+// Short screens
+
+@media (max-height: 480px) {
+  .portfolio-showcase__image-wrapper {
+    height: 80vh;
+  }
+}
+
+// Smaller screens in portrait
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .portfolio-showcase__image-list {
+    flex-direction: row;
+  }
+
+  .portfolio-showcase__image-wrapper {
+    height: auto;
+    width: 100%;
+  }
+  .portfolio-showcase__image {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
+  }
+}
+
+.image--overlay {
+  position: absolute;
+  // margin: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: hsla(240, 10%, 8%, 0);
+  -webkit-transition: background-color 1s ease-in-out;
+  -moz-transition: background-color 1s ease-in-out;
+  -ms-transition: background-color 1s ease-in-out;
+  -o-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
+
+  button {
+      opacity: 0;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -ms-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
+  }
+}
+
+.image--overlay:hover,
+.image--overlay:focus {
+  background-color: hsla(240, 10%, 8%, 0.4);
+
+  button {
+      opacity: 1;
+  } 
+}

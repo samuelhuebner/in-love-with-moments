@@ -11,7 +11,7 @@ import { DialogCategoryComponent } from '../dialog-category/dialog-category.comp
 })
 export class PortfolioComponent implements OnInit {
   public categories: Category[];
-  public disabledExpansion: false;
+  public disabledExpansion = false;
 
   constructor(
     public dialog: MatDialog,

@@ -1,0 +1,20 @@
+<div class="image-showcase" data-aos="fade-up">
+    <div class="portfolio-showcase__section">
+        <ul class="portfolio-showcase__image-list">
+            <li *ngFor="let image of images" class="portfolio-showcase__image-wrapper">
+                <img class="portfolio-showcase__image" [src]="image" loading="lazy" data-aos="fade-up">
+                <div class="image--overlay">
+                    <button mat-raised-button color="warn" (click)="deleteImage(image)">
+                        Delete
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </li>
+            <!--  Adding an empty <li> here so the final photo doesn't stretch like crazy. Try removing it and see what happens!  -->
+            <li class="portfolio-showcase__image-wrapper" *ngIf="images.length > 0 && !editMode"></li>
+            <li class="portfolio-showcase__image-wrapper" *ngIf="editMode">
+                <app-upload-image></app-upload-image>
+            </li>
+        </ul>
+    </div>
+</div>

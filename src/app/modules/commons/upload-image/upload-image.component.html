@@ -1,0 +1,16 @@
+<div class="upload-container">
+    <div class="row">
+        <!-- https://github.com/progtarek/angular-drag-n-drop-directive/blob/master/src/app/app.component.scss -->
+        <div class="dropzone">
+            <input type="file" #imageDropRef id="imageDropRef" multiple
+                (change)="fileBrowseHandler($event)">
+            <img src="../../../../assets/images/ic-upload-file.svg" alt="">
+            <h3>Drag and drop your images here</h3>
+            <h3>or</h3>
+            <label for="imageDropRef">Browse for images</label>
+        </div>
+    </div>
+    <div class="row">
+        <button mat-button>Upload</button>
+    </div>
+</div>
