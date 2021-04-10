@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage, AngularFireStorageReference } from '@angular/fire/storage';
 import SwiperCore, { Autoplay, EffectFade, Pagination, Scrollbar } from 'swiper/core';
 
 SwiperCore.use([Pagination, EffectFade, Autoplay, Scrollbar]);
@@ -13,20 +14,30 @@ export class HomeShowcaseComponent implements OnInit {
   currentSlideIndex: number;
   imagePaths: string[];
 
+  private imageFolderRef: AngularFireStorageReference;
 
-  constructor() {
-    this.imagePaths = [
-      '../../../assets/images/DSC05068-min.JPG',
-      '../../../assets/images/DSC_3126-min.JPEG',
-      '../../../assets/images/DSC03029-min.JPG',
-      '../../../assets/images/DSC04705-min.JPG',
-      '../../../assets/images/DSC05577-min.JPG',
-      '../../../assets/images/DSC_1608-min.JPG',
-      '../../../assets/images/DSC_3847-min.JPG',
-      '../../../assets/images/DSC_7793-min.JPG'
-    ];
+  constructor(
+    private afsStorage: AngularFireStorage
+  ) {
   }
 
   ngOnInit(): void {
+    this.imageFolderRef = this.afsStorage.ref(`images/showcase`);
+    this.imageFolderRef.listAll()
+      .subscribe((result) => {
+        this.imagePaths = [];
+        result.items.forEach(async (item) => {
+          // In order to have the option of a first image we have to check for it here
+          console.log(item.name);
+          let url: string;
+          if (item.name.includes('firstImage')) {
+            url = await item.getDownloadURL();
+            this.imagePaths.unshift(url);
+            return;
+          }
+          url = await item.getDownloadURL();
+          this.imagePaths.push(url);
+        });
+      });
   }
 }
