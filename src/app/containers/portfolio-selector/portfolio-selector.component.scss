@@ -1,9 +1,9 @@
 .portfolio-selector__image {
-    max-width: 400px;
+    max-width: 350px;
     overflow: hidden;
     img {
         transform: translateX(-20%);
-        height: 500px;
+        height: 450px;
         object-fit: cover;
     }
 }
@@ -43,7 +43,7 @@
     }
 }
 
-@media screen and (max-width: 1750px) {
+@media screen and (max-width: 1550px) {
     .portfolio-selector__container {
         width: 90vh;
         grid-template-columns: auto auto;

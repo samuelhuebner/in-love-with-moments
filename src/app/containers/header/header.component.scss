@@ -1,58 +1,83 @@
-.header__brandname {
-    font-size: x-large;
-    color: white;
-}
-
-.header__subtitle {
-    font-size: large;
-    color: white;
-    justify-content: space-around;
-    align-items: center;
-    font-family: 'Dancing Script', cursive;
-}
+@import '/src/assets/styles/variables';
 
 nav {
+    z-index: 1000;
     height: 100px;
     width: 100vw;
-    // background-color: rgba(220, 195, 159, 0.8);
-    background-color: rgba(45, 45, 45, 0.7);
-    // background-color: #dcc39f;
-    z-index: 1000;
+    background: $color-primary;
     position: absolute;
     top: 0;
-
     // animation: nav-load 800ms ease-out;
 }
 
+.logo__desktop {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo__mobile {
+    display: none;
+}
+
 .logo {
-    position: absolute;
-    margin-left: 20px;
-    margin-top: 50px;
-    transform: translate(0%, -25px);
+    transform: translateY(-45px);
+    max-width: 20rem;
+    max-height: 100px;
+    overflow:visible;
+    img {
+        height: 200px;
+    }
 }
 
 .header-links {
-    display: flex;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 12rem 12rem 30rem 12rem 12rem;
+    justify-content: center;
     list-style: none;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    justify-content: space-around;
     align-items: center;
     margin-left: auto;
 }
 
 .header__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    color: white;
+    color: $text-color-primary;
+    font-style: normal;
+    font-weight: normal;
     font-size: 20px;
+    line-height: 36px;
+    /* identical to box height */
+    color: #727566;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1200px) {
+    .header-links {
+        grid-template-columns: 7rem 7rem 20rem 7rem 7rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
     .line {
         width: 30px;
         height: 3px;
         margin: 5px;
-        background: white;
+        background: $text-color-primary;
+    }
+
+    .logo__desktop {
+        display: none;
+    }
+
+    .logo__mobile {
+        display: unset;
+        position: absolute;
     }
 
     .hamburger {
@@ -66,7 +91,9 @@ nav {
 
     .header-links {
         position: fixed;
-        background: rgba($color: black, $alpha: 0.9);
+        display: flex;
+        justify-content: space-around;
+        background: rgba($color: $color-primary, $alpha: 0.9);
         height: 100vh;
         width: 100%;
         flex-direction: column;

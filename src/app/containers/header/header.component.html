@@ -1,10 +1,9 @@
 <nav data-aos="fade-down">
-    <div class="logo">
-        <div class="header__brandname">Helga Hübner</div>
-        <div class="header__subtitle">Fotografie mit Liebe</div>
+    <div class="logo logo__mobile">
+        <img src="../../../assets/images/logo-alt.png" alt="Logo">
     </div>
 
-    <div class="hamburger" (onClick)=hamburgerClick()>
+    <div class="hamburger" (onClick)="hamburgerClick()">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -12,18 +11,23 @@
 
     <ul class="header-links" [ngClass]="{'open': isHamburger}">
         <li class="header__item" [ngClass]="{'fade': isHamburger}">
-            <a class="header__link" routerLink="home" (click)="onMenuClick()">Home</a>
+            <a class="header__link" routerLink="home" (click)="onMenuClick()">HOME</a>
         </li>
         <li class="header__item" [ngClass]="{'fade': isHamburger}">
-            <a class="header__link" routerLink="portfolio" (click)="onMenuClick()">Portfolio</a>
+            <a class="header__link" routerLink="portfolio" (click)="onMenuClick()">PORTFOLIO</a>
+        </li>
+        <li class="logo__desktop">
+            <div class="logo">
+                <img src="../../../assets/images/logo-alt.png" alt="Logo">
+            </div>
         </li>
         <li class="header__item" [ngClass]="{'fade': isHamburger}">
-            <a class="header__link" routerLink="about-me" (click)="onMenuClick()">Über mich</a>
+            <a class="header__link" routerLink="about-me" (click)="onMenuClick()">ÜBER MICH</a>
         </li>
         <li class="header__item" [ngClass]="{'fade': isHamburger}">
-            <a class="header__link" routerLink="contact" (click)="onMenuClick()">Kontakt</a>
+            <a class="header__link" routerLink="contact" (click)="onMenuClick()">KONTAKT</a>
         </li>
         <!-- This last item is to prevent the user not seeing the last link on mobile -->
-        <li class="header__item"></li>
+        <li class="header__item" *ngIf="isHamburger"></li>
     </ul>
 </nav>
