@@ -37,6 +37,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ContactFormComponent } from './containers/contact-form/contact-form.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { CommonsModule } from './modules/commons/commons.module';
+import { QuoteComponent } from './containers/quote/quote.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { CommonsModule } from './modules/commons/commons.module';
     CouplesPortfolioComponent,
     ContactComponent,
     ContactFormComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    QuoteComponent
   ],
   imports: [
     BrowserModule,

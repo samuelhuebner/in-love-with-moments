@@ -37,6 +37,8 @@ $inlovewithmoments-theme: mat-light-theme((
 @import '~swiper/swiper-bundle';
 @import '~aos/dist/aos.css';
 
+@import url("https://use.typekit.net/fty1ekj.css");
+
 @font-face {
     font-family: Bodoni;
     src: url('./assets/fonts/BodoniSvtyTwoITCTT-Book-01.ttf');
@@ -141,10 +143,15 @@ body::-webkit-scrollbar {
 //     }
 // }
 
+h1 {
+    color: $text-color-primary;
+}
+
 h4 {
     font-weight: bold;
     font-size: large;
     margin-bottom: 20px;
+    color: $text-color-primary;
 }
 
 .show-only-mobile {
